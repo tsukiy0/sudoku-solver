@@ -1,3 +1,6 @@
+using System;
+using System.Text;
+
 namespace Core.Models
 {
     public class MatrixBoard : IBoard
@@ -21,7 +24,25 @@ namespace Core.Models
 
         public string Print()
         {
-            throw new System.NotImplementedException();
+            var sb = new StringBuilder();
+
+            var height = matrix.GetLength(0);
+            var width = matrix.GetLength(1);
+
+            for (var y = 0; y < height; y++)
+            {
+                for (var x = 0; x < width; x++)
+                {
+                    sb.Append(matrix[y, x]);
+
+                    if (x == width - 1)
+                    {
+                        sb.Append('\n');
+                    }
+                }
+            }
+
+            return sb.ToString();
         }
     }
 }
