@@ -14,7 +14,7 @@ namespace Core.Models
 
         public int Get(Point point)
         {
-            throw new System.NotImplementedException();
+            return matrix[point.Y, point.X];
         }
 
         public void Put(Point point, int value)
