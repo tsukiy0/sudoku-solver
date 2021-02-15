@@ -35,6 +35,30 @@ namespace Core.Tests.Models
             actual.Should().Be(9);
         }
 
+        [Theory]
+        [InlineData(1, 1)]
+        public void Put(int x, int y)
+        {
+            var board = new MatrixBoard(new int[9, 9] {
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+            });
+            var point = new Point { X = x, Y = y };
+            var value = 1;
+
+            board.Put(point, value);
+            var actual = board.Get(point);
+
+            actual.Should().Be(value);
+        }
+
         public static IEnumerable<object[]> GetData =>
             new List<object[]>
             {

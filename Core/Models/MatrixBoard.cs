@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 
 namespace Core.Models
@@ -19,7 +18,7 @@ namespace Core.Models
 
         public void Put(Point point, int value)
         {
-            throw new System.NotImplementedException();
+            matrix[point.Y, point.X] = value;
         }
 
         public string Print()
