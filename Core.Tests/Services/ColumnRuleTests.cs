@@ -24,7 +24,7 @@ namespace Core.Tests.Services
             });
             var sut = new ColumnRule();
 
-            var actual = sut.Test(board, new Point { X = 6, Y = 4 }, value);
+            var actual = sut.Test(board, new Point(6, 4), value);
 
             actual.Should().BeFalse();
         }
@@ -46,7 +46,7 @@ namespace Core.Tests.Services
             });
             var sut = new ColumnRule();
 
-            var actual = sut.Test(board, new Point { X = 6, Y = 4 }, value);
+            var actual = sut.Test(board, new Point(6, 4), value);
 
             actual.Should().BeTrue();
         }

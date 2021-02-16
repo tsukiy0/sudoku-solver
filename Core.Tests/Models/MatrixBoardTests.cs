@@ -50,7 +50,7 @@ namespace Core.Tests.Models
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
             });
-            var point = new Point { X = x, Y = y };
+            var point = new Point(x, y);
             var value = 1;
 
             board.Put(point, value);
@@ -74,7 +74,7 @@ namespace Core.Tests.Models
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                     }),
-                    new Point{ X = 0, Y = 0 }
+                    new Point(0, 0)
                 },
                 new object[] {
                     new MatrixBoard(new int?[9, 9] {
@@ -88,7 +88,7 @@ namespace Core.Tests.Models
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 9 }
                     }),
-                    new Point{ X = 8, Y = 8 }
+                    new Point(8, 8)
                 },
                 new object[] {
                     new MatrixBoard(new int?[9, 9] {
@@ -102,7 +102,7 @@ namespace Core.Tests.Models
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                     }),
-                    new Point{ X = 4, Y = 4 }
+                    new Point(4, 4)
                 },
             };
     }

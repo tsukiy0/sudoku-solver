@@ -9,11 +9,7 @@ namespace Core.Services
         {
             var row = Enumerable.Range(0, 9).Select(_ =>
             {
-                return board.Get(new Point
-                {
-                    X = point.X,
-                    Y = _
-                });
+                return board.Get(new Point(point.X, _));
             });
 
             return !row.Any(_ => _ == value);
