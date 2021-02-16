@@ -1,12 +1,22 @@
+using System.Linq;
 using Core.Models;
 
 namespace Core.Services
 {
     public class ColumnRule : IBoardRule
     {
-        public bool Test(IBoard board, Point point)
+        public bool Test(IBoard board, Point point, int value)
         {
-            throw new System.NotImplementedException();
+            var row = Enumerable.Range(0, 9).Select(_ =>
+            {
+                return board.Get(new Point
+                {
+                    X = point.X,
+                    Y = _
+                });
+            });
+
+            return !row.Any(_ => _ == value);
         }
     }
 }

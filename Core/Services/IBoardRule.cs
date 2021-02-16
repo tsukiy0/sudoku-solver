@@ -4,6 +4,6 @@ namespace Core.Services
 {
     public interface IBoardRule
     {
-        bool Test(IBoard board, Point point);
+        bool Test(IBoard board, Point point, int value);
     }
 }
