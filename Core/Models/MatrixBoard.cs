@@ -4,19 +4,19 @@ namespace Core.Models
 {
     public class MatrixBoard : IBoard
     {
-        private readonly int?[,] matrix;
+        private readonly int[,] matrix;
 
-        public MatrixBoard(int?[,] matrix)
+        public MatrixBoard(int[,] matrix)
         {
             this.matrix = matrix;
         }
 
-        public int? Get(Point point)
+        public int Get(Point point)
         {
             return matrix[point.Y, point.X];
         }
 
-        public void Put(Point point, int? value)
+        public void Put(Point point, int value)
         {
             matrix[point.Y, point.X] = value;
         }

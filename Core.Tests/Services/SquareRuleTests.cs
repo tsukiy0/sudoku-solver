@@ -11,7 +11,7 @@ namespace Core.Tests.Services
         public void WhenValueExists_ReturnFalse()
         {
             var value = 8;
-            var board = new MatrixBoard(new int?[9, 9] {
+            var board = new MatrixBoard(new int[9, 9] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -33,7 +33,7 @@ namespace Core.Tests.Services
         public void WhenValueDoesNotExist_ReturnTrue()
         {
             var value = 8;
-            var board = new MatrixBoard(new int?[9, 9] {
+            var board = new MatrixBoard(new int[9, 9] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },

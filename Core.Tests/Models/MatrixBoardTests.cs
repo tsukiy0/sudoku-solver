@@ -10,7 +10,7 @@ namespace Core.Tests.Models
         [Fact]
         public void Print()
         {
-            var board = new MatrixBoard(new int?[9, 9] {
+            var board = new MatrixBoard(new int[9, 9] {
                 { 1, 2, 3, 4, 5, 6, 7, 8, 9 },
                 { 1, 2, 3, 4, 5, 6, 7, 8, 9 },
                 { 1, 2, 3, 4, 5, 6, 7, 8, 9 },
@@ -39,7 +39,7 @@ namespace Core.Tests.Models
         [InlineData(1, 1)]
         public void Put(int x, int y)
         {
-            var board = new MatrixBoard(new int?[9, 9] {
+            var board = new MatrixBoard(new int[9, 9] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -63,7 +63,7 @@ namespace Core.Tests.Models
             new List<object[]>
             {
                 new object[] {
-                    new MatrixBoard(new int?[9, 9] {
+                    new MatrixBoard(new int[9, 9] {
                         { 9, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -77,7 +77,7 @@ namespace Core.Tests.Models
                     new Point(0, 0)
                 },
                 new object[] {
-                    new MatrixBoard(new int?[9, 9] {
+                    new MatrixBoard(new int[9, 9] {
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -91,7 +91,7 @@ namespace Core.Tests.Models
                     new Point(8, 8)
                 },
                 new object[] {
-                    new MatrixBoard(new int?[9, 9] {
+                    new MatrixBoard(new int[9, 9] {
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
