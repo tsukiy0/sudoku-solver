@@ -51,14 +51,12 @@ namespace Core.Tests.Models
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0 }
             });
             var point = new Point(x, y);
-            var value1 = 1;
-            var value2 = 1;
+            var value = 1;
 
-            var actual1 = board.Put(point, value1);
-            var actual2 = board.Put(point, value2);
+            board.Put(point, value);
+            var actual = board.Get(point);
 
-            actual1.Get(point).Should().Be(value1);
-            actual2.Get(point).Should().Be(value2);
+            actual.Should().Be(value);
         }
 
         public static IEnumerable<object[]> GetData =>

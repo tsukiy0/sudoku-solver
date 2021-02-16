@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 
 namespace Core.Models
@@ -17,11 +16,9 @@ namespace Core.Models
             return matrix[point.Y, point.X];
         }
 
-        public IBoard Put(Point point, int value)
+        public void Put(Point point, int value)
         {
-            var clone = matrix.Clone() as int[,];
-            clone[point.Y, point.X] = value;
-            return new MatrixBoard(clone);
+            matrix[point.Y, point.X] = value;
         }
 
         public string Print()

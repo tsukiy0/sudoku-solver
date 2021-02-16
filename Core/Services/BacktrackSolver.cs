@@ -6,36 +6,36 @@ namespace Core.Services
 {
     public class BacktrackSolver : ISolver
     {
-        public IList<IBoard> Solve(IBoard board, IEnumerable<IBoardRule> rules)
+        public IBoard Solve(IBoard board, IEnumerable<IBoardRule> rules)
         {
-            var history = new List<IBoard> { board };
-            SolveRecursive(history, rules);
-            return history;
+            SolveRecursive(board, rules);
+            return board;
         }
 
-        public bool SolveRecursive(IList<IBoard> boards, IEnumerable<IBoardRule> rules)
+        public bool SolveRecursive(IBoard board, IEnumerable<IBoardRule> rules)
         {
             foreach (var x in Enumerable.Range(0, 9))
             {
                 foreach (var y in Enumerable.Range(0, 9))
                 {
                     var point = new Point(x, y);
-                    var currentValue = boards.Last().Get(point);
+                    var currentValue = board.Get(point);
 
                     if (currentValue == 0)
                     {
                         foreach (var newValue in Enumerable.Range(1, 9))
                         {
-                            if (IsPossible(boards.Last(), rules, point, newValue))
+                            if (IsPossible(board, rules, point, newValue))
                             {
-                                boards.Add(boards.Last().Put(point, newValue));
+                                board.Put(point, newValue);
+                                var b = board.Print();
 
-                                if (SolveRecursive(boards, rules))
+                                if (SolveRecursive(board, rules))
                                 {
                                     return true;
                                 }
 
-                                boards.Add(boards.Last().Put(point, 0));
+                                board.Put(point, 0);
                             }
                         }
                         return false;
