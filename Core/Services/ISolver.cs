@@ -5,6 +5,6 @@ namespace Core.Services
 {
     public interface ISolver
     {
-        IBoard Solve(IBoard board, IEnumerable<IBoardRule> rules);
+        IList<IBoard> Solve(IBoard board, IEnumerable<IBoardRule> rules);
     }
 }

@@ -3,6 +3,7 @@ using Core.Services;
 using Xunit;
 using System.Collections.Generic;
 using FluentAssertions;
+using System.Linq;
 
 namespace Core.Tests.Services
 {
@@ -52,7 +53,7 @@ namespace Core.Tests.Services
                 new SquareRule()
             });
 
-            actual.Print().Should().Be(solution.Print());
+            actual.Last().Print().Should().Be(solution.Print());
         }
 
         // https://dingo.sbs.arizona.edu/~sandiway/sudoku/examples.html
@@ -94,7 +95,7 @@ namespace Core.Tests.Services
                 new SquareRule()
             });
 
-            actual.Print().Should().Be(solution.Print());
+            actual.Last().Print().Should().Be(solution.Print());
         }
 
         // https://www.youtube.com/watch?v=G_UYXzGuqvM&ab_channel=Computerphile
@@ -134,7 +135,7 @@ namespace Core.Tests.Services
                 new SquareRule()
             });
 
-            actual.Print().Should().Be(solution.Print());
+            actual.Last().Print().Should().Be(solution.Print());
         }
     }
 }
