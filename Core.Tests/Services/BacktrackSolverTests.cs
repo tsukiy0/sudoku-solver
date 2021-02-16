@@ -6,7 +6,7 @@ using FluentAssertions;
 
 namespace Core.Tests.Services
 {
-    public class AbstractSolverTests
+    public class BacktrackSolverTests
     {
         public ISolver Setup()
         {

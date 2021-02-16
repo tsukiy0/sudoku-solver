@@ -1,30 +1,35 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Core.Models
 {
     public class MatrixBoard : IBoard
     {
-        private readonly int[,] matrix;
+        private readonly IList<int[,]> history;
 
         public MatrixBoard(int[,] matrix)
         {
-            this.matrix = matrix;
+            history = new List<int[,]> { matrix };
         }
 
         public int Get(Point point)
         {
-            return matrix[point.Y, point.X];
+            return history.Last()[point.Y, point.X];
         }
 
         public void Put(Point point, int value)
         {
-            matrix[point.Y, point.X] = value;
+            var clone = history.Last().Clone() as int[,];
+            clone[point.Y, point.X] = value;
+            history.Add(clone);
         }
 
         public string Print()
         {
             var sb = new StringBuilder();
 
+            var matrix = history.Last();
             var height = matrix.GetLength(0);
             var width = matrix.GetLength(1);
 
